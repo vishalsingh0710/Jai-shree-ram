@@ -1,0 +1,167 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.wrapper{
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+}
+.container{
+    width:100%;
+    width: 100%;
+    background-color: black;
+    margin: 0 auto;
+    position: relative;
+    padding:20px;
+}
+.container h1{
+    margin:20px 0;
+    z-index: 2;
+    position: relative;
+    user-select: none;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 4rem;
+    background-image: url("/assets/ramji.jpg");
+    color: transparent;
+    font-weight: 600;
+    background-clip: text;
+}
+
+:root {
+    --no-of-slides: 8;
+    --slides-in-view: 4;
+    --slide-width: 250px;
+    --slide-height: 300px;
+    --iteration-time: 18s;
+  }
+  
+ 
+  .carousel__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: calc(var(--slides-in-view) * var(--slide-width));
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .carousel {
+    overflow: hidden;
+    width: calc(2*var(--no-of-slides));
+  }
+  
+  .carousel__slide {
+    min-width: 300px;
+    height:300px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    animation: scroll var(--iteration-time) linear infinite;
+}
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(var(--slide-width) * var(--no-of-slides)* -1));
+    }
+  }
+.carousel__image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    filter: grayscale(100%);
+    box-shadow: 0 0 20px #333;
+    object-fit: contain;
+}
+
+.carousel__slide:hover{
+    transform: scale(1.03);
+    filter: drop-shadow(17px 10px 15px #a4d0f5);
+    transition: 0.3s;
+    border:4px solid;
+    border-color: #9ecaed;
+}
+.carousel__image:hover{
+    filter: grayscale(0%);
+}
+.upperBorder{
+    background-image: url("/assets/ramjistatue-removebg-preview.png");
+    background-size:380px;
+    height: 390px;
+    margin-top: 90px;
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 500px;
+    left: 35%;
+    animation: bigger 4s linear;
+}
+
+@keyframes bigger {
+    0%{
+        background-size: 200px;
+    }
+    50%{
+        background-size: 300px;
+    }
+    100%{
+        background-size: 380px;
+    }
+}
+.gate{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 500px;
+}
+.leftImage{
+    width: 50px;
+    animation: flipper 5s ease-in;
+    position: absolute;
+    height: 500px;
+    left: 425px;
+}
+@keyframes flipper {
+    0%{
+        width: 250px;
+    }
+    30%{
+        width: 250px;
+    }
+    50%{
+        width: 250px;
+    }
+    100%{
+        width: 50px;
+    }
+}
+.insider{
+    display: flex;
+    justify-content: center;
+}
+.rightImage{
+    right: 425px;
+    width: 50px;
+    animation: righter 5s ease-in;
+    position: absolute;
+    height: 500px;
+}
+@keyframes righter{
+    0%{
+        width: 250px;
+    }
+    30%{
+        width: 250px;
+    }
+    50%{
+        width: 250px;
+    }
+    100%{
+        width: 50px;
+    }
+}
